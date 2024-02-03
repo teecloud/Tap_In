@@ -1,0 +1,15 @@
+export * from './account.service';
+import { AccountService } from './account.service';
+export * from './configuration.service';
+import { ConfigurationService } from './configuration.service';
+export * from './role.service';
+import { RoleService } from './role.service';
+export * from './session.service';
+import { SessionService } from './session.service';
+export * from './tenant.service';
+import { TenantService } from './tenant.service';
+export * from './tokenAuth.service';
+import { TokenAuthService } from './tokenAuth.service';
+export * from './user.service';
+import { UserService } from './user.service';
+export const APIS = [AccountService, ConfigurationService, RoleService, SessionService, TenantService, TokenAuthService, UserService];

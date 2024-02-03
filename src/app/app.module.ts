@@ -7,12 +7,16 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgOtpInputModule } from 'ng-otp-input';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiModule, BASE_PATH } from './shared/api-service';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, NgOtpInputModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, NgOtpInputModule, HttpClientModule, ApiModule],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: BASE_PATH, useValue: environment.API_BASE_PATH }
   ],
   bootstrap: [AppComponent]
 })

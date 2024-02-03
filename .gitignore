@@ -351,3 +351,7 @@ MigrationBackup/
 .angular/cache/17.1.2/babel-webpack/
 
 *.pack
+
+*.old
+
+.DS_Store
