@@ -1,23 +1,44 @@
 <ion-content>
+   
     <div class="main_content_div">
 
         <ion-label class="head_lbl">Login to <br> your account</ion-label>
-
         <div class="white_div">
+        <form #form="ngForm">
+            
             <ion-item class="username_box" lines="none">
-              <ion-label position="floating">Email</ion-label>
-              <ion-input></ion-input>
+              
+              <ion-input label="Username"
+              labelPlacement="stacked"
+              fill="solid"
+              [(ngModel)]="authenticateModel.userNameOrEmailAddress"
+              name="username"
+              type="text"
+              #username="ngModel"
+              spellcheck="false"
+              autocapitalize="off"
+              errorText="Username is required"
+              required></ion-input>
             </ion-item>
             <ion-item class="password_box" lines="none">
-                <ion-label position="floating">Password</ion-label>
-                <ion-input></ion-input>
+               
+                <ion-input label="Password"
+                labelPlacement="stacked"
+                fill="solid"
+                [(ngModel)]="authenticateModel.password"
+                name="password"
+                type="password"
+                #password="ngModel"
+                errorText="Password is required"
+                required></ion-input>
                 <span slot="end" class="forgot_lbl" (click)="goToForgot()">Forgot ?</span>
             </ion-item>
-        </div>
-
-        <ion-button expand="block" shape="round" (click)="goToTabs()">
-          Log In
-        </ion-button>
+            <ion-button expand="block" shape="round" type="submit" (click)="onLogin(form)">
+                Log In
+              </ion-button>
+        </form>
+    </div>
+       
 
         <ion-label class="or_lbl">Or sign up with social account</ion-label>
 

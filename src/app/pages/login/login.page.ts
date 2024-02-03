@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticateModel } from 'src/app/shared/api-service';
+import { AuthService } from 'src/app/shared/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
-  constructor(private route: Router) { }
+  authenticateModel: AuthenticateModel = { userNameOrEmailAddress: 'admin', password: '123qwe', rememberClient: true };
+  submitted = false;
+  constructor(private route: Router, private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -21,8 +25,16 @@ export class LoginPage implements OnInit {
       this.route.navigate(['/forgot']);
   }
 
-  goToTabs() {
-      this.route.navigate(['/tabs']);
+  onLogin(form: NgForm) {
+    this.submitted = true;
+    
+    if (form.valid) {
+      this.authService.authenticate(this.authenticateModel).subscribe((model) => {
+        if(model){
+          console.log("model response", model)
+          this.route.navigateByUrl('/tabs');
+        }
+      });
+    }
   }
-
 }

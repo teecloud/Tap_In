@@ -10,10 +10,11 @@ import { NgOtpInputModule } from 'ng-otp-input';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiModule, BASE_PATH } from './shared/api-service';
 import { environment } from 'src/environments/environment';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, NgOtpInputModule, HttpClientModule, ApiModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, NgOtpInputModule, HttpClientModule, ApiModule, FormsModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: BASE_PATH, useValue: environment.API_BASE_PATH }
