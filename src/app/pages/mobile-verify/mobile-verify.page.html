@@ -1,0 +1,18 @@
+<ion-content>
+  <div class="main_content_div">
+      <ion-icon name="chevron-back" class="back_btn"></ion-icon>
+      <ion-label class="head_lbl">Enter the Code <br> to Verify Your Phone</ion-label>
+      <ion-label class="grey_lbl">We have sent you an SMS with a code to <br> the number +919876543212</ion-label>
+      
+      <div style="text-align: center;">
+          <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:4}"></ng-otp-input>
+      </div>
+      
+      <ion-button expand="block" shape="round" (click)="goToTabs()">
+        Verify
+      </ion-button>
+
+      <ion-label class="small_lbl">Send a new code</ion-label>
+
+  </div>
+</ion-content>

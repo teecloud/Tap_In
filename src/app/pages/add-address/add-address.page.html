@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-button (click)="goBack()" fill="clear" size="small" class="back_btn">
+        <ion-icon slot="start" name="chevron-back"></ion-icon>
+        Back
+      </ion-button>
+      <ion-title *ngIf="isAddEdit == 'add'">Add Address</ion-title>
+      <ion-title *ngIf="isAddEdit == 'edit'">Edit Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+      <div class="map_div"></div>
+
+      <ion-item class="username_box" lines="none">
+          <ion-label position="floating">Title</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+      
+      <ion-item class="username_box" lines="none">
+          <ion-label position="floating">Location</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item class="username_box" lines="none">
+          <ion-label position="floating">House No / Flat No</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item class="username_box" lines="none">
+          <ion-label position="floating">Landmark</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+
+      <ion-item class="username_box" lines="none">
+          <ion-label position="floating">Pincode</ion-label>
+          <ion-input></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" shape="round" *ngIf="isAddEdit == 'add'">
+          Add Address
+      </ion-button>
+
+      <ion-button expand="block" shape="round" *ngIf="isAddEdit == 'edit'">
+          Edit Address
+      </ion-button>
+
+     
+  </div>
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-button (click)="goBack()" fill="clear" size="small" class="back_btn">
+          <ion-icon slot="start" name="chevron-back"></ion-icon>
+          Back
+        </ion-button>
+        <ion-title>My Bag</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="main_content_div">
+
+        <ion-list>
+            <ion-item-sliding *ngFor="let item of cart">
+                <ion-item lines="none">
+                    <div class="item_div">
+                        <div class="back_img" [style.backgroundImage]="'url('+ item +')'"></div>
+                        <div class="detail_div">
+                            <ion-label class="name_lbl">Fold knitted sweater</ion-label>
+                            <ion-label class="price_lbl">$ 24.90</ion-label>
+                            <ion-label class="grey_lbl">Size : M | Color: Grey</ion-label>
+                        </div>
+                        <div class="add_remove_div">
+                            <ion-icon name="remove" (click)="minus()" ></ion-icon>
+                            <ion-label>{{qty}}</ion-label>
+                            <ion-icon name="add" (click)="plus()"></ion-icon>
+                        </div>
+                    </div>
+                </ion-item>
+
+                <ion-item-options side="end">
+                    <ion-item-option color="danger">
+                        <ion-icon slot="icon-only" name="trash"></ion-icon>
+                    </ion-item-option>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+
+    </div>
+</ion-content>
+
+<ion-footer>
+    <div class="footer_div">
+        <div class="grey_div" style="border-bottom: 1px solid lightgrey;">
+            <ion-label class="small_lbl">Promo Code</ion-label>
+            <ion-label class="bold_lbl">Springsell</ion-label>
+        </div>
+        <div class="grey_div">
+          <ion-label class="small_lbl">Total Amount</ion-label>
+          <ion-label class="bold_lbl">$ 230</ion-label>
+        </div>
+        <div class="btn_div">
+            <ion-button expand="block" shape="round" (click)="goToCheckout()">
+                Continue
+            </ion-button>
+        </div>
+    </div>
+</ion-footer>

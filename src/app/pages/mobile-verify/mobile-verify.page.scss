@@ -1,0 +1,45 @@
+.main_content_div {
+    width: 100%;
+    padding: 16px;
+
+    .back_btn {
+        margin-top: 40px;
+        font-size: 30px;
+    }
+
+    ion-label {
+        display: block;
+    }
+
+    .head_lbl {
+        font-size: 26px;
+        font-family: 'semi-bold';
+        margin-bottom: 16px;
+        margin-top: 30px;
+    }
+    .grey_lbl {
+        color: grey;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    ng-otp-input {
+        display: block;
+        margin: auto;
+    }
+
+    ion-button{
+        margin: 0;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    .small_lbl {
+        font-size: 14px;
+        border-bottom: 1px solid;
+        text-align: center;
+        width: fit-content;
+        display: block;
+        margin: auto;
+    }
+}

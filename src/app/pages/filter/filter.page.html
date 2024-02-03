@@ -1,0 +1,41 @@
+<ion-content>
+    <div class="main_content_div">
+
+        <ion-icon name="close" class="close_btn"></ion-icon>
+
+        <ion-label class="bold_lbl">Filters</ion-label>
+
+        <div class="flex_header">
+            <ion-label class="header_lbl">Price Range</ion-label>
+        </div>
+
+        <ion-range min="-200" max="200" dual-knobs="true" mode="ios">
+            <ion-label slot="start">$ 50</ion-label>
+            <ion-label slot="end">$ 1000</ion-label>
+        </ion-range>
+
+        <div class="flex_header">
+            <ion-label class="header_lbl">Sizes</ion-label>
+        </div>
+        <div class="color_flex">
+            <div class="color_div2" [class.active]="currentSize == i" *ngFor="let item of availableSizes; let i = index" (click)="chooseSize(i)">
+                <ion-label>{{item}}</ion-label>
+            </div>
+        </div>
+
+        <div class="flex_header">
+            <ion-label class="header_lbl">Brands</ion-label>
+            <ion-label class="grey_lbl">Select All</ion-label>
+        </div>
+
+        <div class="list_div">
+            <ion-list>
+                <ion-item *ngFor="let brand of brands">
+                    <ion-label>{{brand}}</ion-label>
+                    <ion-checkbox></ion-checkbox>
+                </ion-item>
+            </ion-list>
+        </div>
+
+    </div>
+</ion-content>

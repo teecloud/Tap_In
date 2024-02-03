@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-button (click)="goToBack()" slot="start" fill="clear" size="small" class="back_btn">
+            <ion-icon slot="start" name="chevron-back"></ion-icon>
+            Back
+        </ion-button>
+        <ion-title>Wishlist</ion-title>
+        <ion-button fill="clear" size="small" slot="end" style="font-family: 'semi-bold';">Edit</ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="main_content_div">
+        <ion-segment value="all" (ionChange)="segmentChanged($event)" mode="md">
+            <ion-segment-button value="all">
+                <ion-label>All Items</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="boards">
+                <ion-label>Boards</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+
+        <div class="all_div" *ngIf="tabID == 'all'">
+            <div class="flex_header">
+                <ion-label>54 items found</ion-label>
+                <ion-icon name="options-sharp"></ion-icon>
+            </div>
+
+            <div class="item_div" *ngFor="let item of items">
+                <div class="back_image" [style.backgroundImage]="'url('+ item.img +')'"></div>
+                <div class="detail_div">
+                    <ion-label class="name_lbl">Fold knitted sweater</ion-label>
+                    <ion-label class="price_lbl">$30.23</ion-label>
+                    <ion-label class="grey_lbl">Size : M | Color : grey</ion-label>
+                    <ion-button fill="outline" shape="round" size="small">
+                      Move to bag
+                    </ion-button>
+                </div>
+            </div>
+        </div>
+
+        <div class="board_div" *ngIf="tabID == 'boards'">
+            <div class="single_board" *ngFor="let item of items">
+                <div class="image_flex">
+                    <div class="back_board" [style.backgroundImage]="'url(assets/imgs/5.jpg)'"></div>
+                    <div class="back_board" [style.backgroundImage]="'url(assets/imgs/6.jpg)'"></div>
+                    <div class="back_grid">
+                        <div class="inner_flex" style="margin-right: 5px;">
+                            <div class="small_back1" style="margin-bottom: 5px;" [style.backgroundImage]="'url(assets/imgs/7.jpg)'"></div>
+                            <div class="small_back2" [style.backgroundImage]="'url(assets/imgs/8.jpg)'"></div>
+                        </div>
+                        <div class="inner_flex">
+                            <div class="small_back2" style="margin-bottom: 5px;" [style.backgroundImage]="'url(assets/imgs/9.jpg)'"></div>
+                            <div class="small_back1" [style.backgroundImage]="'url(assets/imgs/10.jpg)'"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="board_name_div">
+                    <ion-label class="board_name">Going-out out</ion-label>
+                    <ion-label class="grey_lbl">25 Items</ion-label>
+                    <ion-icon name="chevron-forward"></ion-icon>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</ion-content>

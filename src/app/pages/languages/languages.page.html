@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-button (click)="goBack()" fill="clear" size="small" class="back_btn">
+        <ion-icon slot="start" name="chevron-back"></ion-icon>
+        Back
+      </ion-button>
+      <ion-title>Languages</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="main_content_div">
+
+        <ion-label class="bold_lbl">Choose Language</ion-label>
+
+        <ion-list mode="md">
+            <ion-radio-group name="lang" value="english">
+              <ion-item>
+                  <ion-label>English</ion-label>
+                  <ion-radio value="english"></ion-radio>
+              </ion-item>
+              <ion-item>
+                  <ion-label>Hindi</ion-label>
+                  <ion-radio value="hindi"></ion-radio>
+              </ion-item>
+              <ion-item>
+                  <ion-label>French</ion-label>
+                  <ion-radio value="french"></ion-radio>
+              </ion-item>
+              <ion-item>
+                  <ion-label>Spanish</ion-label>
+                  <ion-radio value="spanish"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+        </ion-list>
+
+        <ion-button expand="block" shape="round">
+            Set Language
+        </ion-button>
+      
+    </div>
+</ion-content>

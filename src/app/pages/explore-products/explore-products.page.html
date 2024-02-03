@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-button (click)="goToBack()" fill="clear" size="small" class="back_btn">
+          <ion-icon slot="start" name="chevron-back"></ion-icon>
+          Back
+      </ion-button>
+      <ion-button size="small" slot="end" fill="clear">
+          <ion-icon name="heart" style="font-size: 20px;"></ion-icon>
+      </ion-button>
+      <ion-button size="small" slot="end" fill="clear" (click)="goToCart()">
+          <ion-icon name="bag"></ion-icon>
+      </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+      
+      <div class="content_div">
+          <div class="header_flex">
+              <div>
+                  <ion-label class="bold_lbl">{{title}}</ion-label>
+                  <ion-label class="grey_lbl">2000 Items Found</ion-label>
+              </div>
+              <ion-icon name="ellipsis-horizontal"></ion-icon>
+          </div>
+
+          <ion-row>
+              <ion-col size="6" *ngFor="let item of product">
+                  <div class="main_col" (click)="goToProduct()">
+                      <div class="col_back" [style.backgroundImage]="'url('+ item +')'">
+                          <div class="round_div">
+                              <ion-icon name="heart"></ion-icon>
+                          </div>
+                      </div>
+                      <div class="detail_div">
+                          <ion-label class="brand_lbl">WEST</ion-label>
+                          <ion-label class="name_lbl">Black T-shirt</ion-label>
+                          <ion-label class="price_lbl">$ 40.70</ion-label>
+                      </div>
+                  </div>
+              </ion-col>
+          </ion-row>
+          
+      </div>
+
+  </div>
+</ion-content>

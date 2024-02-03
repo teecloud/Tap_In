@@ -1,0 +1,30 @@
+<ion-content>
+    <div class="main_content_div">
+        <swiper-container pager="ios">
+
+            <swiper-slide>
+                <div class="slide_1" [style.backgroundImage]="'url(assets/imgs/kalena_flower.jpg)'">
+                  <div class="overlay_div">
+                      <ion-label class="head_lbl">Kay's Customs</ion-label>
+                      <ion-label class="bold_lbl">Custom designs<br> with real women<br> in mind!</ion-label>
+                      <ion-icon color=""name="arrow-forward"></ion-icon>
+                  </div>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="slide_2">
+                    <div class="up_div" [style.backgroundImage]="'url(assets/imgs/kalena_silver.png)'">
+                        <ion-label class="head_lbl">FANCY</ion-label>
+                    </div>
+                    <ion-button expand="block" shape="round" (click)="goToWelcome()">
+                      Start Shopping
+                    </ion-button>
+                    <div class="low_div" [style.backgroundImage]="'url(assets/imgs/kalena_flower.jpg)'">
+                        <ion-label class="bold_lbl">Shop the <br> most morden <br> essentials.</ion-label>
+                    </div>
+                </div>
+            </swiper-slide>
+
+        </swiper-container>
+    </div> 
+</ion-content>

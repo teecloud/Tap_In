@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-button slot="end" fill="clear" size="small" (click)="goToCart()">
+            <ion-icon name="bag" style="color: #808080;"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="main_content_div">
+        
+        <ion-label class="title_header">Explore</ion-label>
+        <div class="search_div">
+            <ion-icon name="search"></ion-icon>
+            <ion-input type="text" placeholder="Search"></ion-input>
+            <ion-icon name="mic"></ion-icon>
+        </div>
+
+        <div class="back_image" [style.backgroundImage]="'url('+ item.img +')'" (click)="goToExploreProducts(item.name)" *ngFor="let item of collections">
+            <div class="abs_div">
+                <ion-label class="bold_lbl">{{item.name}}</ion-label>
+                <ion-label class="small_lbl">{{item.off}}</ion-label>
+            </div>
+        </div>
+
+    </div>
+</ion-content>
